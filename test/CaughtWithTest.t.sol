@@ -16,4 +16,9 @@ contract CaughtWithTestTest is Test {
         caughtWithTest.setNumber(myNumber);
         assertEq(myNumber, caughtWithTest.number());
     }
-}
+
+    function testFuzz(uint256 randomNumber) public {
+        uint256 returnedNumber = caughtWithFuzz.doMoreMath(randomNumber);
+        assert(returnedNumber != 0);
+    }
+    
